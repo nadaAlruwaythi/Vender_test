@@ -5,11 +5,11 @@ Spyder Editor
 This is a temporary script file.
 """
 
-
+from  PIL import Image, ImageEnhance
 import streamlit as st
 import numpy as np
 import pickle
-import sklearn
+
 # loading the saved model
 loaded_model = pickle.load(open('knn.sav', 'rb'))
 
@@ -32,7 +32,15 @@ def prdict_ven(input_data):
 
   
 def main():
-    st.title('welcome')
+    image = Image.open('nupco.png') #Brand logo image (optional)
+    st.image(image, width=150)
+    st.title("Prediction Vender ")
+    html_temp = """
+    <div style="background-color:tomato;padding:6px">
+    <h2 style="color:white;text-align:center;"> Prediction Vender ML App </h2>
+    </div>
+    """
+    st.markdown(html_temp,unsafe_allow_html=True)
     Vender_code=st.text_input('Vender code')
     Purchasing_Document=st.text_input('Purchasing Documen')
     PO_Item=st.text_input('PO Item')
