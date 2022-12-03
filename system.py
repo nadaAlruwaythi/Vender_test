@@ -11,7 +11,7 @@ import numpy as np
 import pickle
 
 # loading the saved model
-loaded_model = pickle.load(open('knn.sav', 'rb'))
+loaded_model = pickle.load(open('knn.pkl', 'rb'))
 
 def prdict_ven(input_data):
     input_data = (400277,4500016200,20,5120000000000,5120000000000,1680)
